@@ -2,7 +2,7 @@
 
 👉 [Jump to Folder Structure Section](#nextjs-project-folder-structure-explained)
 👉 [Go to App Page.tsx section](#app-pagetsx)
-
+👉 [Go to App LayoutOne.tsx section](#app-layoutonetsx)
 
 # 📁 Next.js Project Folder Structure Explained
 
@@ -185,3 +185,53 @@ LayoutOne (Page Wrapper)
  └── Testimonial        // Happy clients
  └── CTA + Slider       // Let's chat!
 ```
+
+---
+
+# App LayoutOne.tsx
+
+## 1. `📁 File Purpose`
+LayoutOne.tsx is a layout component. It wraps your page with a Navbar, Footer, and a <main> area where the page-specific content (children) is rendered.
+
+---
+
+## 2. `📦 Import Breakdown`
+```
+import { Fragment, ReactNode } from 'react'
+```
+- Fragment: Used instead of a div to group multiple elements without adding extra DOM nodes.
+- ReactNode: Type definition — allows any renderable content like JSX elements, strings, numbers, etc.
+
+---
+
+## 3. `🧩 Component Definition`
+```
+const LayoutOne = ({
+  children,
+}: Readonly<{
+  children: ReactNode
+}>) => {
+```
+- children is the content passed between <LayoutOne>...</LayoutOne> (like all the sections in your Home page).
+- Wrapped in Readonly<...> to prevent mutation — a best practice for type safety and immutability in React with TypeScript.
+
+---
+
+## 4. `🖼 JSX Structure`
+```
+return (
+  <Fragment>
+    <Navbar />
+    <main className="relative z-10 bg-backgroundBody dark:bg-dark lg:mb-[600px]">
+      {children}
+    </main>
+    <Footer />
+  </Fragment>
+)
+```
+- Renders the site’s navigation menu — usually at the top.
+- Present across all pages using this layout.
+- This is the main content area of the page.
+- Renders the footer (contact info, links, copyright).
+- Stays at the bottom of every page wrapped in this layout.
+
