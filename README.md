@@ -135,3 +135,48 @@ These are common logic blocks that can be reused, like:
 - @/components/homepage-01/: Home-specific components (e.g., Hero, Portfolio, Testimonial)
 - @/components/shared/: Reusable components across different pages (e.g., About, Video, CTA, etc.)
 
+
+🧠 What This Code Does
+This file defines and exports a homepage (Home) component of a design agency website using Next.js, and wraps multiple sections of the page using a layout component.
+
+---
+
+## 2. `🔖 Metadata Setup`
+```
+export const metadata = {
+  title: 'Rivor | Design Agency',
+}
+```
+- In Next.js App Router, metadata is used to define SEO properties (like title, description) for the page.
+- This sets the browser tab title to: Rivor | Design Agency.
+
+---
+
+## 3. `🧩 Components Used (Section-wise Breakdown)`
+- This wraps the entire page.
+- Likely contains shared layout elements: header, footer, global styles, etc.
+
+---
+
+## 4. `💡 Page Sections Inside LayoutOne`
+These are arranged vertically, from top to bottom on the page:
+
+### 4.1 `Hero`
+- The top-most section.
+- Usually includes a headline, subheading, CTA button, and maybe an illustration/image.
+- It's the first thing users see — acts like a landing banner.
+
+### 4.2 `✅ Overall Flow of Page`
+```
+LayoutOne (Page Wrapper)
+ └── Hero                // Top banner
+ └── Video              // Intro video
+ └── About              // Who we are
+ └── Portfolio          // Our work
+ └── ClientsV3          // Who we've worked with
+ └── ServicesV8         // What we offer
+ └── Community          // Human element / blog
+ └── FAQ                // Questions people ask
+ └── Testimonial        // Happy clients
+ └── CTA + Slider       // Let's chat!
+```
