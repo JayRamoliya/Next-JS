@@ -18,12 +18,15 @@ Common files include:
 - `loading.tsx` – fallback UI while loading
 - `error.tsx` – error boundary
 
-Example: 
+Example:
 /app
 └─ about/
 ├─ page.tsx --> localhost:3000/about
 └─ layout.tsx --> Layout for about page
 
+yaml
+Copy
+Edit
 
 ---
 
@@ -57,8 +60,60 @@ export interface User {
   name: string;
   email: string;
 }
+7. node_modules/
+📦 Contains all the installed packages used in the project.
+🛑 Do not edit manually.
+It is automatically generated when you run npm install or yarn.
 
-## 7. node_modules/
-📦 All the installed packages.
-⚠️ Don't touch or modify — generated via npm install or yarn.
+8. public/
+🌐 Static assets go here — images, fonts, icons, etc.
+Files inside are accessible via URL, e.g., /logo.png.
 
+9. scss/
+🎨 If you're using SCSS (SASS preprocessor), your stylesheets are stored here.
+You can split global styles, partials, and modules.
+
+10. utils/
+🧰 Contains helper or utility functions.
+These are common logic blocks that can be reused, like:
+
+formatDate.ts
+
+validateEmail.ts
+
+generateSlug.ts
+
+⚙️ CONFIG FILES
+.eslintrc.json – 🔍 ESLint config — keeps your code clean and consistent
+
+.gitignore – 🛑 Tells Git which files/folders to ignore (like .next, node_modules, etc.)
+
+.prettierrc, .prettierignore – 🎨 Prettier config — auto-formats your code
+
+next.config.ts – ⚙️ Next.js config — image domains, redirects, env vars, etc.
+
+tailwind.config.ts – 🎨 Tailwind CSS settings — theme, colors, breakpoints, etc.
+
+tsconfig.json – 📘 TypeScript config — how TypeScript behaves in your project
+
+package.json – 📦 Lists dependencies, scripts, and metadata
+
+package-lock.json / yarn.lock – 📌 Lock files for consistent installs
+
+🧠 HOW THE APP WORKS (Simplified Flow)
+✅ Define a route inside app/ folder
+✅ Design UI using reusable components (components/)
+✅ Use logic via hooks (hooks/) and utility functions (utils/)
+✅ Style using Tailwind/SCSS (scss/, tailwind.config.ts)
+✅ Type-check with TypeScript interfaces (interface/)
+✅ Configure & build using next.config.ts, tsconfig.json, etc.
+
+🧠 Summary of Entry Flow
+Purpose	File/Folder	Description
+Project start	app/page.tsx	✅ Home Page component
+Routing	app/[folder]/page.tsx	✅ Each folder = a route
+Global Layout	app/layout.tsx	🧱 Shared layout (header/footer)
+Assets	public/	🌐 For images, logos, etc.
+Global Styles	scss/, tailwind.config.ts	🎨 CSS/Tailwind
+Logic/Functions	hooks/, utils/	🧠 Custom logic
+Reusable UI	components/	🧩 Reusable buttons, nav, etc.
