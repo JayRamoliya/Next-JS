@@ -126,3 +126,12 @@ These are common logic blocks that can be reused, like:
 | Global Styles      | `scss/`, `tailwind.config.ts` | 🎨 CSS/Tailwind                       |
 | Logic/Functions    | `hooks/`, `utils/`            | 🧠 Custom logic                       |
 | Reusable UI        | `components/`                 | 🧩 Reusable buttons, nav, etc.        |
+
+---
+
+# App Page.tsx
+
+## 1. `🔧 File Structure Context (based on imports)`
+- @/components/homepage-01/: Home-specific components (e.g., Hero, Portfolio, Testimonial)
+- @/components/shared/: Reusable components across different pages (e.g., About, Video, CTA, etc.)
+
