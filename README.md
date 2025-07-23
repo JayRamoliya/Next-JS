@@ -1,3 +1,8 @@
+# Next.js
+
+👉 [Jump to Folder Structure Section](#nextjs-project-folder-structure-explained)
+👉 [Go to App Page.tsx section](#app-pagetsx)
+
 
 # 📁 Next.js Project Folder Structure Explained
 
